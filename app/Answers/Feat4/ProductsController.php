@@ -10,7 +10,7 @@ class ProductsController extends Controller
     public function index(Request $request)
     {
         $groupId = $request->input('group') ?? 0;
-        $groups = GroupsLinks::generateGroupsLinks($groupId);
-        return view('products', ['groups' => $groups]);
+        $group = GroupsLinks::generateGroupsLinks($groupId);
+        return view('products', ['group' => $group]);
     }
 }

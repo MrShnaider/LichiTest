@@ -58,4 +58,9 @@ class GroupsLinks
 
         return $sequence;
     }
+
+    public function haveSubGroups(): bool
+    {
+        return $this->groups->count() > 0;
+    }
 }

@@ -1,17 +1,17 @@
 <?php
 use App\Answers\Feat4\GroupsLinks;
 /**
-* @var GroupsLinks $groups
+* @var GroupsLinks $group
 */
 ?>
 
-<a href="/products?group={{ $groups->id }}">
-    <p>{{ $groups->name }}</p>
-    @if ($groups->groups->count() > 0)
+<a href="/products?group={{ $group->id }}">
+    <p>{{ $group->name }}</p>
+    @if ($group->haveSubGroups())
         <ul>
-            @foreach($groups->groups as $groups)
+            @foreach($group->groups as $curGroups)
             <li>
-                @include('products', ['groups' => $groups])
+                @include('products', ['group' => $curGroups])
             </li>
             @endforeach
         </ul>
