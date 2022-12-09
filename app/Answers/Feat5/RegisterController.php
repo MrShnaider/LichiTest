@@ -7,7 +7,6 @@ namespace App\Answers\Feat5;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
 class RegisterController extends Controller
 {
