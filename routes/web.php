@@ -1,17 +1,13 @@
 <?php
 
-use App\Answers\Feat4\ProductsController;
 use Illuminate\Support\Facades\Route;
+use App\Answers\Feat4\ProductsController;
+use App\Answers\Feat5\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 
 Route::get('/', function () {
@@ -19,3 +15,6 @@ Route::get('/', function () {
 });
 
 Route::get('/products', [ProductsController::class, 'index']);
+
+Route::get('/register', [RegisterController::class, 'getForm'])->name('register.get');
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
